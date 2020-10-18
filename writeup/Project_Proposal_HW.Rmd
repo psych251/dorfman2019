@@ -18,7 +18,7 @@ I am interested in the affective influence of learning and decision making. I pu
 
 Briefly, participants were asked to make a binary decision on which one of two options contained reward. They were also informed that there were three hidden agent that would interfere with the outcome such that they would receive reward for positive agent, punishment for negative agent and random outcome for neutral agent. Therefore, the Bayesian RL model focused on describing both reward probability as well as the hidden-agent intervention.  
 
-##links
+##Links
 https://github.com/psych251/dorfman2019
 https://github.com/psych251/dorfman2019/tree/master/original_paper
 
