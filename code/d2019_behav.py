@@ -13,6 +13,7 @@ from scipy import stats
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.stats import t
+from matplotlib.lines import Line2D
 
 datadir='/Users/huanwang/GoogleDrive/Stanford/1st_yr/251/valence-control/data/'
 
@@ -36,10 +37,14 @@ behav_stat2=[stats.ttest_rel(dt_lg_stat2[0][1],dt_lg_stat2[1][1]),\
 
 dt_fig2a=dt_lg_stat2.melt(value_name="latent_guess",ignore_index=False)
 
-plt.figure(figsize=[10,3])
+plt.figure(figsize=[10,4])
 plt.ylim(0,1)
 plt.yticks([0,0.5,1])
-ax=sns.barplot(x="condition",y="latent_guess",hue="feedback",hue_order=[1,0],data=dt_fig2a,ci=68,capsize=.02)
+ax=sns.barplot(x="condition",y="latent_guess",hue="feedback",palette={"darkgray","dimgray"},hue_order=[1,0],data=dt_fig2a,ci=68,capsize=.02)
+legend_elements = [Line2D([0], [0], color='darkgray', lw=4, label='Positive'), Line2D([0], [0], color='dimgray', lw=4, label='Negative')]
+ax.legend(handles=legend_elements, title='feedback')
+ax.set_xticklabels(['Adversarial','Benvolent','Neutral'])
+
 ax.figure.savefig(datadir+'../../dorfman2019/code/Fig2a.jpg')
 
 
